@@ -1,0 +1,9 @@
+# Segredos locais — NUNCA commitar
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Sistema
+.DS_Store

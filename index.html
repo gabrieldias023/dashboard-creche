@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Métricas do Instagram — Creche</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f5fb;
+    --card: #ffffff;
+    --ink: #1d2333;
+    --muted: #6b7280;
+    --line: #e6e8f0;
+    --brand: #c2185b;      /* rosa Instagram-ish */
+    --brand-soft: #fde4ee;
+    --up: #16a34a;
+    --down: #dc2626;
+    --shadow: 0 1px 3px rgba(20,20,50,.06), 0 8px 24px rgba(20,20,50,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 18px 56px; }
+  header.top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-bottom: 4px; }
+  header.top h1 { font-size: 1.5rem; margin: 0; letter-spacing: -.02em; }
+  .conta { color: var(--brand); font-weight: 600; }
+  .atualizado { color: var(--muted); font-size: .85rem; margin: 2px 0 20px; }
+
+  .seletor { display: inline-flex; background: var(--card); border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px; box-shadow: var(--shadow); margin-bottom: 22px; }
+  .seletor button {
+    border: 0; background: transparent; color: var(--muted); font-weight: 600;
+    padding: 8px 18px; border-radius: 999px; cursor: pointer; font-size: .9rem;
+  }
+  .seletor button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 18px; box-shadow: var(--shadow); }
+  .card .rotulo { color: var(--muted); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  .card .valor { font-size: 1.9rem; font-weight: 700; margin: 6px 0 2px; letter-spacing: -.02em; }
+  .card .var { font-size: .85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+  .var.up { color: var(--up); }
+  .var.down { color: var(--down); }
+  .var.flat { color: var(--muted); }
+  .var .periodo { color: var(--muted); font-weight: 500; }
+
+  .grafico-box { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px; box-shadow: var(--shadow); margin-top: 22px; }
+  .grafico-head { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .metrica-btn { border: 1px solid var(--line); background: #fff; color: var(--muted);
+    padding: 6px 12px; border-radius: 999px; cursor: pointer; font-size: .82rem; font-weight: 600; }
+  .metrica-btn[aria-pressed="true"] { background: var(--brand-soft); color: var(--brand); border-color: var(--brand); }
+  .grafico-canvas-wrap { position: relative; height: 320px; }
+
+  .aviso { background: var(--brand-soft); color: #86255a; border-radius: 12px;
+    padding: 12px 16px; font-size: .88rem; margin-top: 16px; }
+  footer { color: var(--muted); font-size: .78rem; text-align: center; margin-top: 30px; }
+  @media (max-width: 480px) {
+    .card .valor { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Métricas do Instagram</h1>
+    <span class="conta" id="conta">@emeineuzagraf</span>
+  </header>
+  <div class="atualizado" id="atualizado">Carregando…</div>
+
+  <div class="seletor" role="group" aria-label="Período de comparação">
+    <button id="btn-semana" aria-pressed="true">Semana</button>
+    <button id="btn-mes" aria-pressed="false">Mês</button>
+  </div>
+
+  <section class="cards" id="cards"></section>
+
+  <div class="grafico-box">
+    <div class="grafico-head" id="metricas"></div>
+    <div class="grafico-canvas-wrap">
+      <canvas id="grafico"></canvas>
+    </div>
+  </div>
+
+  <div id="aviso"></div>
+
+  <footer>Dados orgânicos coletados 1×/dia via GitHub Actions · janela de 6 meses</footer>
+</div>
+
+<script>
+"use strict";
+
+// Métricas exibidas. "acumulado" = número total no dia (ex.: seguidores);
+// as demais são fluxos diários (somamos no período).
+const METRICAS = [
+  { chave: "seguidores",    titulo: "Seguidores",     tipo: "acumulado" },
+  { chave: "alcance",       titulo: "Alcance",         tipo: "fluxo" },
+  { chave: "visualizacoes", titulo: "Visualizações",   tipo: "fluxo" },
+  { chave: "engajamento",   titulo: "Engajamento",     tipo: "fluxo" },
+  { chave: "comentarios",   titulo: "Comentários",     tipo: "fluxo" },
+];
+
+const nf = new Intl.NumberFormat("pt-BR");
+const estado = { dados: [], periodoDias: 7, metricaGrafico: "alcance", chart: null };
+
+function parseData(s) { const [a, m, d] = s.split("-").map(Number); return new Date(a, m - 1, d); }
+function diffDias(a, b) { return Math.round((a - b) / 86400000); }
+
+// Mantém só os últimos 6 meses a partir da data mais recente presente.
+function janela6meses(dados) {
+  if (!dados.length) return [];
+  const ultima = parseData(dados[dados.length - 1].data);
+  const limite = new Date(ultima); limite.setMonth(limite.getMonth() - 6);
+  return dados.filter(s => parseData(s.data) >= limite);
+}
+
+function ehNum(v) { return typeof v === "number" && !isNaN(v); }
+
+// Soma um campo de fluxo dentro de um intervalo [ini, fim] (Date, inclusivo).
+function somaPeriodo(dados, chave, ini, fim) {
+  let soma = 0, tem = false;
+  for (const s of dados) {
+    const d = parseData(s.data);
+    if (d >= ini && d <= fim && ehNum(s[chave])) { soma += s[chave]; tem = true; }
+  }
+  return tem ? soma : null;
+}
+
+// Último valor de um campo acumulado com data <= alvo.
+function valorAcumuladoAte(dados, chave, alvo) {
+  let val = null;
+  for (const s of dados) {
+    const d = parseData(s.data);
+    if (d <= alvo && ehNum(s[chave])) val = s[chave];
+  }
+  return val;
+}
+
+function variacaoPct(atual, anterior) {
+  if (!ehNum(atual) || !ehNum(anterior) || anterior === 0) return null;
+  return (atual - anterior) / anterior * 100;
+}
+
+function renderCards() {
+  const dados = estado.dados;
+  const cont = document.getElementById("cards");
+  cont.innerHTML = "";
+  if (!dados.length) return;
+
+  const ultima = parseData(dados[dados.length - 1].data);
+  const P = estado.periodoDias;
+  const rotuloPeriodo = P === 7 ? "vs. semana anterior" : "vs. mês anterior";
+
+  // Período atual: últimos P dias (inclusive a data mais recente).
+  const iniAtual = new Date(ultima); iniAtual.setDate(iniAtual.getDate() - (P - 1));
+  // Período anterior: os P dias imediatamente antes.
+  const fimAnt = new Date(iniAtual); fimAnt.setDate(fimAnt.getDate() - 1);
+  const iniAnt = new Date(fimAnt); iniAnt.setDate(iniAnt.getDate() - (P - 1));
+
+  for (const m of METRICAS) {
+    let valor, anterior;
+    if (m.tipo === "acumulado") {
+      valor = valorAcumuladoAte(dados, m.chave, ultima);
+      anterior = valorAcumuladoAte(dados, m.chave, fimAnt);
+    } else {
+      valor = somaPeriodo(dados, m.chave, iniAtual, ultima);
+      anterior = somaPeriodo(dados, m.chave, iniAnt, fimAnt);
+    }
+    const pct = variacaoPct(valor, anterior);
+
+    let varHtml;
+    if (pct === null) {
+      varHtml = `<span class="var flat">—</span> <span class="periodo">${rotuloPeriodo}</span>`;
+    } else {
+      const cls = pct > 0 ? "up" : pct < 0 ? "down" : "flat";
+      const seta = pct > 0 ? "▲" : pct < 0 ? "▼" : "•";
+      const txt = (pct > 0 ? "+" : "") + pct.toFixed(1).replace(".", ",") + "%";
+      varHtml = `<span class="var ${cls}">${seta} ${txt}</span> <span class="periodo">${rotuloPeriodo}</span>`;
+    }
+
+    const el = document.createElement("div");
+    el.className = "card";
+    el.innerHTML =
+      `<div class="rotulo">${m.titulo}</div>` +
+      `<div class="valor">${valor === null ? "—" : nf.format(valor)}</div>` +
+      `<div>${varHtml}</div>`;
+    cont.appendChild(el);
+  }
+}
+
+function renderBotoesMetrica() {
+  const cont = document.getElementById("metricas");
+  cont.innerHTML = "";
+  for (const m of METRICAS) {
+    const b = document.createElement("button");
+    b.className = "metrica-btn";
+    b.textContent = m.titulo;
+    b.setAttribute("aria-pressed", String(m.chave === estado.metricaGrafico));
+    b.addEventListener("click", () => { estado.metricaGrafico = m.chave; renderBotoesMetrica(); renderGrafico(); });
+    cont.appendChild(b);
+  }
+}
+
+function renderGrafico() {
+  const dados = estado.dados;
+  if (!dados.length) return;
+  const ultima = parseData(dados[dados.length - 1].data);
+  const P = estado.periodoDias;
+  const ini = new Date(ultima); ini.setDate(ini.getDate() - (P - 1));
+
+  const pontos = dados.filter(s => { const d = parseData(s.data); return d >= ini && d <= ultima; });
+  const chave = estado.metricaGrafico;
+  const titulo = (METRICAS.find(m => m.chave === chave) || {}).titulo || chave;
+
+  const labels = pontos.map(s => {
+    const d = parseData(s.data);
+    return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+  });
+  const valores = pontos.map(s => ehNum(s[chave]) ? s[chave] : null);
+
+  const ctx = document.getElementById("grafico").getContext("2d");
+  if (estado.chart) estado.chart.destroy();
+  estado.chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [{
+        label: titulo,
+        data: valores,
+        borderColor: "#c2185b",
+        backgroundColor: "rgba(194,24,91,.10)",
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: "#c2185b",
+        tension: .3,
+        fill: true,
+        spanGaps: true,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: c => `${titulo}: ${nf.format(c.parsed.y)}` } } },
+      scales: {
+        y: { beginAtZero: true, ticks: { callback: v => nf.format(v) }, grid: { color: "#eef0f6" } },
+        x: { grid: { display: false } },
+      },
+    },
+  });
+}
+
+function renderAviso() {
+  const box = document.getElementById("aviso");
+  const n = estado.dados.length;
+  if (n === 0) {
+    box.innerHTML = `<div class="aviso">Ainda não há snapshots. Assim que o GitHub Actions rodar (1×/dia), os dados aparecem aqui.</div>`;
+  } else if (n < estado.periodoDias * 2) {
+    box.innerHTML = `<div class="aviso">Coletando histórico: ${n} dia(s) registrado(s). As comparações de variação e a linha do gráfico ficam completas conforme os dias acumulam.</div>`;
+  } else {
+    box.innerHTML = "";
+  }
+}
+
+function setPeriodo(dias) {
+  estado.periodoDias = dias;
+  document.getElementById("btn-semana").setAttribute("aria-pressed", String(dias === 7));
+  document.getElementById("btn-mes").setAttribute("aria-pressed", String(dias === 30));
+  renderCards(); renderGrafico(); renderAviso();
+}
+
+async function init() {
+  document.getElementById("btn-semana").addEventListener("click", () => setPeriodo(7));
+  document.getElementById("btn-mes").addEventListener("click", () => setPeriodo(30));
+
+  try {
+    const resp = await fetch("./snapshots_ig.json", { cache: "no-store" });
+    let arr = await resp.json();
+    if (!Array.isArray(arr)) arr = [];
+    arr.sort((a, b) => (a.data < b.data ? -1 : a.data > b.data ? 1 : 0));
+    estado.dados = janela6meses(arr);
+  } catch (e) {
+    estado.dados = [];
+  }
+
+  const at = document.getElementById("atualizado");
+  if (estado.dados.length) {
+    const ult = estado.dados[estado.dados.length - 1].data;
+    at.textContent = "Última atualização: " + parseData(ult).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
+  } else {
+    at.textContent = "Sem dados ainda.";
+  }
+
+  renderBotoesMetrica();
+  renderCards();
+  renderGrafico();
+  renderAviso();
+}
+
+init();
+</script>
+</body>
+</html>
