@@ -1,5 +1,1781 @@
 [
   {
+    "data": "2026-01-01",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-02",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 42,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-03",
+    "seguidores": null,
+    "alcance": 0,
+    "visualizacoes": 6,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-04",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 26,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-05",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 71,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-06",
+    "seguidores": null,
+    "alcance": 1,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-07",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 10,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-08",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 7,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-09",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-10",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-11",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 67,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-12",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 65,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-01-13",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 52,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-14",
+    "seguidores": null,
+    "alcance": 19,
+    "visualizacoes": 202,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-15",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 46,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-16",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-17",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 413,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-18",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 2,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-19",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 17,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-20",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 131,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-21",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-22",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 2,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-01-23",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 73,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-24",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 19,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-25",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-26",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 58,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-27",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 348,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-01-28",
+    "seguidores": null,
+    "alcance": 292,
+    "visualizacoes": 1051,
+    "comentarios": 0,
+    "engajamento": 21
+  },
+  {
+    "data": "2026-01-29",
+    "seguidores": null,
+    "alcance": 272,
+    "visualizacoes": 992,
+    "comentarios": 0,
+    "engajamento": 25
+  },
+  {
+    "data": "2026-01-30",
+    "seguidores": null,
+    "alcance": 193,
+    "visualizacoes": 488,
+    "comentarios": 0,
+    "engajamento": 7
+  },
+  {
+    "data": "2026-01-31",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 116,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-01",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 369,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-02",
+    "seguidores": null,
+    "alcance": 17,
+    "visualizacoes": 99,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-03",
+    "seguidores": null,
+    "alcance": 21,
+    "visualizacoes": 276,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-04",
+    "seguidores": null,
+    "alcance": 14,
+    "visualizacoes": 299,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-05",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 74,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-06",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 108,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-07",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 29,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-08",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 7,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-09",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 137,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-10",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 13,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-11",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 53,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-12",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 10,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-13",
+    "seguidores": null,
+    "alcance": 204,
+    "visualizacoes": 500,
+    "comentarios": 3,
+    "engajamento": 27
+  },
+  {
+    "data": "2026-02-14",
+    "seguidores": null,
+    "alcance": 89,
+    "visualizacoes": 271,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-02-15",
+    "seguidores": null,
+    "alcance": 22,
+    "visualizacoes": 45,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-16",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 60,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-17",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 19,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-18",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 116,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-19",
+    "seguidores": null,
+    "alcance": 328,
+    "visualizacoes": 843,
+    "comentarios": 4,
+    "engajamento": 31
+  },
+  {
+    "data": "2026-02-20",
+    "seguidores": null,
+    "alcance": 479,
+    "visualizacoes": 2428,
+    "comentarios": 3,
+    "engajamento": 93
+  },
+  {
+    "data": "2026-02-21",
+    "seguidores": null,
+    "alcance": 301,
+    "visualizacoes": 765,
+    "comentarios": 0,
+    "engajamento": 19
+  },
+  {
+    "data": "2026-02-22",
+    "seguidores": null,
+    "alcance": 31,
+    "visualizacoes": 44,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-23",
+    "seguidores": null,
+    "alcance": 22,
+    "visualizacoes": 61,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-24",
+    "seguidores": null,
+    "alcance": 25,
+    "visualizacoes": 94,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-02-25",
+    "seguidores": null,
+    "alcance": 17,
+    "visualizacoes": 55,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-02-26",
+    "seguidores": null,
+    "alcance": 271,
+    "visualizacoes": 745,
+    "comentarios": 4,
+    "engajamento": 36
+  },
+  {
+    "data": "2026-02-27",
+    "seguidores": null,
+    "alcance": 109,
+    "visualizacoes": 163,
+    "comentarios": 0,
+    "engajamento": 10
+  },
+  {
+    "data": "2026-02-28",
+    "seguidores": null,
+    "alcance": 107,
+    "visualizacoes": 249,
+    "comentarios": 1,
+    "engajamento": 19
+  },
+  {
+    "data": "2026-03-01",
+    "seguidores": null,
+    "alcance": 71,
+    "visualizacoes": 118,
+    "comentarios": 0,
+    "engajamento": 7
+  },
+  {
+    "data": "2026-03-02",
+    "seguidores": null,
+    "alcance": 30,
+    "visualizacoes": 57,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-03",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 30,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-03-04",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 20,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-05",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 366,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-06",
+    "seguidores": null,
+    "alcance": 23,
+    "visualizacoes": 101,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-07",
+    "seguidores": null,
+    "alcance": 137,
+    "visualizacoes": 310,
+    "comentarios": 1,
+    "engajamento": 13
+  },
+  {
+    "data": "2026-03-08",
+    "seguidores": null,
+    "alcance": 236,
+    "visualizacoes": 972,
+    "comentarios": 2,
+    "engajamento": 33
+  },
+  {
+    "data": "2026-03-09",
+    "seguidores": null,
+    "alcance": 30,
+    "visualizacoes": 140,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-03-10",
+    "seguidores": null,
+    "alcance": 16,
+    "visualizacoes": 64,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-03-11",
+    "seguidores": null,
+    "alcance": 15,
+    "visualizacoes": 181,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-03-12",
+    "seguidores": null,
+    "alcance": 206,
+    "visualizacoes": 515,
+    "comentarios": 9,
+    "engajamento": 22
+  },
+  {
+    "data": "2026-03-13",
+    "seguidores": null,
+    "alcance": 240,
+    "visualizacoes": 413,
+    "comentarios": 1,
+    "engajamento": 27
+  },
+  {
+    "data": "2026-03-14",
+    "seguidores": null,
+    "alcance": 69,
+    "visualizacoes": 168,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-03-15",
+    "seguidores": null,
+    "alcance": 25,
+    "visualizacoes": 550,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-03-16",
+    "seguidores": null,
+    "alcance": 248,
+    "visualizacoes": 604,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-03-17",
+    "seguidores": null,
+    "alcance": 25,
+    "visualizacoes": 65,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-03-18",
+    "seguidores": null,
+    "alcance": 231,
+    "visualizacoes": 839,
+    "comentarios": 1,
+    "engajamento": 20
+  },
+  {
+    "data": "2026-03-19",
+    "seguidores": null,
+    "alcance": 42,
+    "visualizacoes": 122,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-03-20",
+    "seguidores": null,
+    "alcance": 32,
+    "visualizacoes": 86,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-03-21",
+    "seguidores": null,
+    "alcance": 93,
+    "visualizacoes": 297,
+    "comentarios": 0,
+    "engajamento": 10
+  },
+  {
+    "data": "2026-03-22",
+    "seguidores": null,
+    "alcance": 92,
+    "visualizacoes": 535,
+    "comentarios": 1,
+    "engajamento": 9
+  },
+  {
+    "data": "2026-03-23",
+    "seguidores": null,
+    "alcance": 22,
+    "visualizacoes": 28,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-24",
+    "seguidores": null,
+    "alcance": 201,
+    "visualizacoes": 709,
+    "comentarios": 0,
+    "engajamento": 27
+  },
+  {
+    "data": "2026-03-25",
+    "seguidores": null,
+    "alcance": 39,
+    "visualizacoes": 110,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-03-26",
+    "seguidores": null,
+    "alcance": 249,
+    "visualizacoes": 570,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-03-27",
+    "seguidores": null,
+    "alcance": 290,
+    "visualizacoes": 894,
+    "comentarios": 3,
+    "engajamento": 57
+  },
+  {
+    "data": "2026-03-28",
+    "seguidores": null,
+    "alcance": 192,
+    "visualizacoes": 288,
+    "comentarios": 0,
+    "engajamento": 7
+  },
+  {
+    "data": "2026-03-29",
+    "seguidores": null,
+    "alcance": 28,
+    "visualizacoes": 46,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-03-30",
+    "seguidores": null,
+    "alcance": 28,
+    "visualizacoes": 43,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-03-31",
+    "seguidores": null,
+    "alcance": 250,
+    "visualizacoes": 578,
+    "comentarios": 2,
+    "engajamento": 27
+  },
+  {
+    "data": "2026-04-01",
+    "seguidores": null,
+    "alcance": 215,
+    "visualizacoes": 784,
+    "comentarios": 4,
+    "engajamento": 35
+  },
+  {
+    "data": "2026-04-02",
+    "seguidores": null,
+    "alcance": 620,
+    "visualizacoes": 1943,
+    "comentarios": 9,
+    "engajamento": 97
+  },
+  {
+    "data": "2026-04-03",
+    "seguidores": null,
+    "alcance": 406,
+    "visualizacoes": 772,
+    "comentarios": 0,
+    "engajamento": 23
+  },
+  {
+    "data": "2026-04-04",
+    "seguidores": null,
+    "alcance": 81,
+    "visualizacoes": 174,
+    "comentarios": 0,
+    "engajamento": 4
+  },
+  {
+    "data": "2026-04-05",
+    "seguidores": null,
+    "alcance": 36,
+    "visualizacoes": 67,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-06",
+    "seguidores": null,
+    "alcance": 23,
+    "visualizacoes": 67,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-07",
+    "seguidores": null,
+    "alcance": 21,
+    "visualizacoes": 176,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-08",
+    "seguidores": null,
+    "alcance": 28,
+    "visualizacoes": 360,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-04-09",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 33,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-10",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 138,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-11",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 10,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-12",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 109,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-04-13",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 16,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-14",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 10,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-15",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-16",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-17",
+    "seguidores": null,
+    "alcance": 127,
+    "visualizacoes": 184,
+    "comentarios": 0,
+    "engajamento": 4
+  },
+  {
+    "data": "2026-04-18",
+    "seguidores": null,
+    "alcance": 195,
+    "visualizacoes": 366,
+    "comentarios": 1,
+    "engajamento": 23
+  },
+  {
+    "data": "2026-04-19",
+    "seguidores": null,
+    "alcance": 23,
+    "visualizacoes": 40,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-20",
+    "seguidores": null,
+    "alcance": 16,
+    "visualizacoes": 149,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-04-21",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 55,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-04-22",
+    "seguidores": null,
+    "alcance": 14,
+    "visualizacoes": 74,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-23",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 103,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-24",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-25",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 51,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-26",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 6,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-27",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 173,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-04-28",
+    "seguidores": null,
+    "alcance": 140,
+    "visualizacoes": 266,
+    "comentarios": 1,
+    "engajamento": 12
+  },
+  {
+    "data": "2026-04-29",
+    "seguidores": null,
+    "alcance": 81,
+    "visualizacoes": 165,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-04-30",
+    "seguidores": null,
+    "alcance": 15,
+    "visualizacoes": 160,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-01",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 12,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-02",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-03",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-04",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 6,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-05",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 23,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-06",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-07",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 6,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-08",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 142,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-09",
+    "seguidores": null,
+    "alcance": 209,
+    "visualizacoes": 336,
+    "comentarios": 0,
+    "engajamento": 17
+  },
+  {
+    "data": "2026-05-10",
+    "seguidores": null,
+    "alcance": 35,
+    "visualizacoes": 45,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-11",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-12",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 47,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-13",
+    "seguidores": null,
+    "alcance": 122,
+    "visualizacoes": 184,
+    "comentarios": 0,
+    "engajamento": 4
+  },
+  {
+    "data": "2026-05-14",
+    "seguidores": null,
+    "alcance": 53,
+    "visualizacoes": 56,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-15",
+    "seguidores": null,
+    "alcance": 16,
+    "visualizacoes": 508,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-16",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 20,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-17",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 36,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-18",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 20,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-19",
+    "seguidores": null,
+    "alcance": 75,
+    "visualizacoes": 182,
+    "comentarios": 1,
+    "engajamento": 5
+  },
+  {
+    "data": "2026-05-20",
+    "seguidores": null,
+    "alcance": 38,
+    "visualizacoes": 70,
+    "comentarios": 0,
+    "engajamento": 5
+  },
+  {
+    "data": "2026-05-21",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 28,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-22",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-23",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 20,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-24",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-25",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-26",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 376,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-05-27",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 91,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-28",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 38,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-05-29",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 163,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-30",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-05-31",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 59,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-01",
+    "seguidores": null,
+    "alcance": 0,
+    "visualizacoes": 0,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-02",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 18,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-03",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 63,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-06-04",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 1,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-05",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 23,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-06-06",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 2,
+    "comentarios": 0,
+    "engajamento": -1
+  },
+  {
+    "data": "2026-06-07",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-06-08",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-09",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-10",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-11",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 34,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-12",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 23,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-13",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 190,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-14",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-15",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-16",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 166,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-17",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 40,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-18",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 41,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-19",
+    "seguidores": null,
+    "alcance": 17,
+    "visualizacoes": 305,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-06-20",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 1,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-21",
+    "seguidores": null,
+    "alcance": 540,
+    "visualizacoes": 1485,
+    "comentarios": 10,
+    "engajamento": 100
+  },
+  {
+    "data": "2026-06-22",
+    "seguidores": null,
+    "alcance": 58,
+    "visualizacoes": 128,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-06-23",
+    "seguidores": null,
+    "alcance": 14,
+    "visualizacoes": 26,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-06-24",
+    "seguidores": null,
+    "alcance": 14,
+    "visualizacoes": 143,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
+    "data": "2026-06-25",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 43,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-26",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 112,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-27",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 10,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-28",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 74,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-29",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-06-30",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 15,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-01",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 159,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-07-02",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 51,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-03",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 16,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-07-04",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 21,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-05",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-06",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 1
+  },
+  {
+    "data": "2026-07-07",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 27,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-08",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-09",
+    "seguidores": null,
+    "alcance": 2,
+    "visualizacoes": 19,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-10",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 5,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-11",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-12",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 5,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-13",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 104,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-14",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 7,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-15",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-16",
+    "seguidores": null,
+    "alcance": 7,
+    "visualizacoes": 54,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-17",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 11,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-18",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 13,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-19",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 3,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-20",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 31,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-21",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 71,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-22",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 268,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-23",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 452,
+    "comentarios": 0,
+    "engajamento": 4
+  },
+  {
+    "data": "2026-07-24",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 22,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-25",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 19,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-26",
+    "seguidores": null,
+    "alcance": 3,
+    "visualizacoes": 103,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-27",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-28",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 249,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-29",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 6,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-30",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 5,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-07-31",
+    "seguidores": null,
+    "alcance": 4,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-01",
+    "seguidores": null,
+    "alcance": 5,
+    "visualizacoes": 4,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-02",
+    "seguidores": null,
+    "alcance": 8,
+    "visualizacoes": 9,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-03",
+    "seguidores": null,
+    "alcance": 6,
+    "visualizacoes": 5,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-04",
+    "seguidores": null,
+    "alcance": 12,
+    "visualizacoes": 25,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-05",
+    "seguidores": null,
+    "alcance": 11,
+    "visualizacoes": 186,
+    "comentarios": 0,
+    "engajamento": 3
+  },
+  {
+    "data": "2026-08-06",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 60,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-07",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 54,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-08",
+    "seguidores": null,
+    "alcance": 9,
+    "visualizacoes": 8,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-09",
+    "seguidores": null,
+    "alcance": 10,
+    "visualizacoes": 16,
+    "comentarios": 0,
+    "engajamento": 0
+  },
+  {
+    "data": "2026-08-10",
+    "seguidores": null,
+    "alcance": 13,
+    "visualizacoes": 180,
+    "comentarios": 0,
+    "engajamento": 2
+  },
+  {
     "data": "2026-08-11",
     "seguidores": 1239,
     "alcance": 25,
