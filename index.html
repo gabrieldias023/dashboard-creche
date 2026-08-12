@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Painel Instagram — @emeineuzagraf</title>
+<style>
+  :root{
+    --bg:#faf5f7; --card:#ffffff; --ink:#2b2430; --muted:#8a7f8f;
+    --line:#efe4ea; --rose:#c0356b; --rose-soft:#f4d7e3; --rose-down:#d98aa6;
+    --up:#1a9a63; --down:#d64545;
+    --f-reels:#c0356b; --f-foto:#e39fbb; --f-carrossel:#8e4bd0; --f-video:#f0a13a; --f-stories:#5aa9e6;
+    --shadow:0 1px 3px rgba(90,30,55,.06),0 8px 24px rgba(90,30,55,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+  header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+  h1{font-size:22px;margin:0;font-weight:750;letter-spacing:-.3px}
+  .sub{color:var(--muted);font-size:13px;margin-top:4px}
+  .followers{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 18px;box-shadow:var(--shadow);text-align:right}
+  .followers .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .followers .val{font-size:26px;font-weight:800;line-height:1.1}
+  .followers .delta{font-size:12px;color:var(--muted)}
+
+  .controls{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+  .ctl-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .ctl-row .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:42px;flex:0 0 auto}
+  .pill{border:1px solid var(--line);background:var(--card);color:var(--ink);
+    padding:7px 13px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s;font-weight:600}
+  .pill:hover{border-color:var(--rose-down)}
+  .pill.on{background:var(--rose);border-color:var(--rose);color:#fff}
+  .pill.off{opacity:.32;cursor:not-allowed}
+  .pill.off:hover{border-color:var(--line)}
+
+  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:22px}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:var(--shadow)}
+  .card .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .card .v{font-size:28px;font-weight:800;margin:6px 0 2px;line-height:1.05}
+  .card .d{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .d .up{color:var(--up);font-weight:700}
+  .d .down{color:var(--down);font-weight:700}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 20px;box-shadow:var(--shadow);margin-bottom:20px}
+  .panel h2{font-size:15px;margin:0 0 2px;font-weight:750}
+  .panel .hint{font-size:12px;color:var(--muted);margin:0 0 12px}
+  .panel .pills{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+  .chartbox{position:relative;height:320px}
+  .chartbox.sm{height:280px}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  td.num,th.num{text-align:right;white-space:nowrap}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;color:#fff}
+  .leg{color:var(--ink)}
+  .leg a{color:var(--rose);text-decoration:none}
+  .leg a:hover{text-decoration:underline}
+  .empty{color:var(--muted);font-size:13px;padding:8px 2px}
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:26px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Painel do Instagram</h1>
+      <div class="sub" id="sub">@emeineuzagraf · métricas orgânicas</div>
+    </div>
+    <div class="followers">
+      <div class="lbl">Seguidores atuais</div>
+      <div class="val" id="fVal">—</div>
+      <div class="delta" id="fDelta">&nbsp;</div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="ctl-row"><span class="tag">Ano</span><div id="anos" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+    <div class="ctl-row"><span class="tag">Mês</span><div id="meses" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <section class="panel">
+    <h2>Crescimento mês a mês <span id="tendAno" style="color:var(--muted);font-weight:600"></span></h2>
+    <p class="hint">Cada ponto é um mês do ano selecionado. Trechos em vermelho = queda em relação ao mês anterior.</p>
+    <div class="pills" id="pillsTend"></div>
+    <div class="chartbox"><canvas id="chTend"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <h2>Por formato <span id="fmtMes" style="color:var(--muted);font-weight:600"></span></h2>
+    <p class="hint">Distribuição do mês selecionado por tipo de publicação.</p>
+    <div class="pills" id="pillsFmt"></div>
+    <div class="chartbox sm"><canvas id="chFmt"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <h2>Publicações do mês <span id="listMes" style="color:var(--muted);font-weight:600"></span></h2>
+    <p class="hint">Ordenadas por engajamento (curtidas + comentários).</p>
+    <div id="tabela"></div>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script>
+const MESES = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+const MESES_LONG = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const nf = new Intl.NumberFormat('pt-BR');
+const nfc = new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1});
+const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+const FMT_COR = {Reels:'--f-reels',Foto:'--f-foto',Carrossel:'--f-carrossel','Vídeo':'--f-video',Stories:'--f-stories'};
+const METRICAS = [
+  {id:'curtidas',   nome:'Curtidas'},
+  {id:'comentarios',nome:'Comentários'},
+  {id:'posts',      nome:'Posts'},
+  {id:'engajamento',nome:'Engajamento'},
+  {id:'alcance',    nome:'Alcance'},
+  {id:'visualizacoes',nome:'Visualizações'},
+];
+
+let POSTS=[], SNAPS=[];
+let chTend=null, chFmt=null;
+const state = {ano:null, mes:null, mTend:'curtidas', mFmt:'engajamento'};
+
+Chart.register(ChartDataLabels);
+
+function anoDe(d){ return +(d||'0000').slice(0,4); }
+function mesDe(d){ return +(d||'0000-00').slice(5,7); } // 1..12
+function num(v){ return (typeof v==='number' && isFinite(v)) ? v : 0; }
+
+function engPost(p){ return num(p.curtidas)+num(p.comentarios); }
+function valorPost(p,metrica){
+  if(metrica==='posts') return 1;
+  if(metrica==='engajamento') return engPost(p);
+  if(metrica==='alcance') return p.alcance;
+  if(metrica==='visualizacoes') return p.visualizacoes;
+  return num(p[metrica]);
+}
+
+function somaMetrica(lista,metrica){
+  let soma=0, achou=false, algumNulo=false;
+  for(const p of lista){
+    const v = valorPost(p,metrica);
+    if(metrica==='alcance'||metrica==='visualizacoes'){
+      if(typeof v==='number'){ soma+=v; achou=true; } else { algumNulo=true; }
+    } else { soma+=num(v); achou=true; }
+  }
+  return {soma, achou, algumNulo};
+}
+
+function postsDoMes(ano,mes){
+  return POSTS.filter(p=>anoDe(p.data)===ano && mesDe(p.data)===mes);
+}
+
+async function carregar(){
+  const [rp,rs] = await Promise.all([
+    fetch('./posts_ig.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+    fetch('./snapshots_ig.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  ]);
+  POSTS = Array.isArray(rp)?rp.filter(p=>p&&p.data):[];
+  SNAPS = Array.isArray(rs)?rs.filter(s=>s&&s.data):[];
+  init();
+}
+
+function init(){
+  const comSeg = SNAPS.filter(s=>typeof s.seguidores==='number');
+  if(comSeg.length){
+    const ult = comSeg[comSeg.length-1];
+    document.getElementById('fVal').textContent = nf.format(ult.seguidores);
+    if(comSeg.length>1){
+      const prim = comSeg[0];
+      const dif = ult.seguidores - prim.seguidores;
+      const sinal = dif>0?'+':'';
+      document.getElementById('fDelta').textContent = `${sinal}${nf.format(dif)} desde ${prim.data.slice(8,10)}/${prim.data.slice(5,7)}`;
+    }
+  }
+  document.getElementById('sub').textContent =
+    `@emeineuzagraf · ${nf.format(POSTS.length)} publicações · métricas orgânicas`;
+
+  const anos = [...new Set(POSTS.map(p=>anoDe(p.data)))].filter(a=>a>2000).sort((a,b)=>b-a);
+  if(!anos.length){ document.getElementById('cards').innerHTML='<div class="empty">Sem dados de publicações ainda.</div>'; return; }
+  state.ano = anos[0];
+
+  const elA = document.getElementById('anos'); elA.innerHTML='';
+  anos.forEach(a=>{
+    const b=document.createElement('button'); b.className='pill'+(a===state.ano?' on':''); b.textContent=a;
+    b.onclick=()=>{ state.ano=a; escolherMesPadrao(); marcarAno(); render(); };
+    elA.appendChild(b);
+  });
+
+  montarPills('pillsTend','mTend');
+  montarPills('pillsFmt','mFmt');
+
+  escolherMesPadrao();
+  render();
+}
+
+function marcarAno(){
+  [...document.getElementById('anos').children].forEach(b=>b.classList.toggle('on', +b.textContent===state.ano));
+}
+function escolherMesPadrao(){
+  const meses = POSTS.filter(p=>anoDe(p.data)===state.ano).map(p=>mesDe(p.data));
+  state.mes = meses.length ? Math.max(...meses) : 12;
+}
+
+function montarPills(contId,chave){
+  const el=document.getElementById(contId); el.innerHTML='';
+  METRICAS.forEach(m=>{
+    const b=document.createElement('button');
+    b.className='pill'+(state[chave]===m.id?' on':'');
+    b.textContent=m.nome;
+    b.onclick=()=>{ state[chave]=m.id; [...el.children].forEach(x=>x.classList.toggle('on',x===b)); render(); };
+    el.appendChild(b);
+  });
+}
+
+function render(){
+  renderMeses();
+  renderCards();
+  renderTend();
+  renderFmt();
+  renderTabela();
+  document.getElementById('tendAno').textContent = '· '+state.ano;
+  document.getElementById('fmtMes').textContent = '· '+MESES_LONG[state.mes-1]+'/'+state.ano;
+  document.getElementById('listMes').textContent = '· '+MESES_LONG[state.mes-1]+'/'+state.ano;
+  document.getElementById('foot').innerHTML =
+    'Seguidores não têm histórico na API do Instagram (só valor atual). '+
+    'Alcance e visualizações por post existem apenas para publicações mais recentes. '+
+    'Dados atualizados automaticamente pelo GitHub Actions.';
+}
+
+function renderMeses(){
+  const el=document.getElementById('meses'); el.innerHTML='';
+  const comPost = new Set(POSTS.filter(p=>anoDe(p.data)===state.ano).map(p=>mesDe(p.data)));
+  MESES.forEach((nome,i)=>{
+    const mesNum=i+1, tem=comPost.has(mesNum);
+    const b=document.createElement('button');
+    b.className='pill'+(mesNum===state.mes?' on':'')+(tem?'':' off');
+    b.textContent=nome;
+    if(tem) b.onclick=()=>{ state.mes=mesNum; render(); };
+    el.appendChild(b);
+  });
+}
+
+function variacaoHTML(cur,prev,podeNulo){
+  if(prev===0 || prev==null || (podeNulo && cur==null)) return '<span>— vs. mês anterior</span>';
+  const pct=((cur-prev)/prev)*100;
+  const cls=pct>=0?'up':'down';
+  const arrow=pct>=0?'▲':'▼';
+  return `<span class="${cls}">${arrow} ${Math.abs(pct).toFixed(1)}%</span> vs. mês anterior`;
+}
+
+function renderCards(){
+  const atual = postsDoMes(state.ano,state.mes);
+  let pAno=state.ano, pMes=state.mes-1; if(pMes<1){pMes=12;pAno--;}
+  const anterior = postsDoMes(pAno,pMes);
+
+  const defs=[
+    {id:'posts',        nome:'Posts'},
+    {id:'curtidas',     nome:'Curtidas'},
+    {id:'comentarios',  nome:'Comentários'},
+    {id:'alcance',      nome:'Alcance'},
+    {id:'visualizacoes',nome:'Visualizações'},
+  ];
+  const cont=document.getElementById('cards'); cont.innerHTML='';
+  defs.forEach(d=>{
+    const a=somaMetrica(atual,d.id), b=somaMetrica(anterior,d.id);
+    const podeNulo=(d.id==='alcance'||d.id==='visualizacoes');
+    let valTxt = (podeNulo && !a.achou) ? '—' : nf.format(a.soma);
+    const curV = (podeNulo && !a.achou)?null:a.soma;
+    const prevV=(podeNulo && !b.achou)?0:b.soma;
+    const el=document.createElement('div'); el.className='card';
+    el.innerHTML=`<div class="k">${d.nome}</div><div class="v">${valTxt}</div>
+      <div class="d">${variacaoHTML(curV,prevV,podeNulo)}</div>`;
+    cont.appendChild(el);
+  });
+}
+
+function serieAno(ano,metrica){
+  const soma=new Array(12).fill(0);
+  const temPost=new Array(12).fill(false);
+  for(const p of POSTS){
+    if(anoDe(p.data)!==ano) continue;
+    const m=mesDe(p.data)-1; temPost[m]=true;
+    const v=valorPost(p,metrica);
+    if(metrica==='alcance'||metrica==='visualizacoes'){
+      if(typeof v==='number') soma[m]+=v;
+    } else soma[m]+=num(v);
+  }
+  return soma.map((s,i)=> temPost[i] ? s : null);
+}
+
+function renderTend(){
+  const rose=cssv('--rose'), roseDown=cssv('--rose-down'), roseSoft=cssv('--rose-soft');
+  const dados=serieAno(state.ano,state.mTend);
+  const nomeMetrica=(METRICAS.find(m=>m.id===state.mTend)||{}).nome;
+  const ptColors=dados.map((y,i)=> (i>0 && y!=null && dados[i-1]!=null && y<dados[i-1])? '#d64545' : rose);
+  const ptRadius=dados.map((_,i)=> i+1===state.mes?6:3.5);
+
+  if(chTend) chTend.destroy();
+  chTend=new Chart(document.getElementById('chTend'),{
+    type:'line',
+    data:{labels:MESES,datasets:[{
+      label:nomeMetrica,data:dados,spanGaps:false,
+      borderColor:rose,backgroundColor:roseSoft,fill:true,tension:.3,
+      pointBackgroundColor:ptColors,pointBorderColor:ptColors,pointRadius:ptRadius,pointHoverRadius:7,
+      segment:{borderColor:ctx=> (ctx.p1.parsed.y!=null && ctx.p0.parsed.y!=null && ctx.p1.parsed.y<ctx.p0.parsed.y)?roseDown:rose},
+    }]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{label:c=> `${nomeMetrica}: ${c.parsed.y==null?'—':nf.format(c.parsed.y)}`}},
+        datalabels:{align:'top',anchor:'end',color:'#6b5f70',font:{size:11,weight:'600'},
+          formatter:v=> v==null?'':nfc.format(v)},
+      },
+      scales:{
+        y:{beginAtZero:true,grid:{color:cssv('--line')},ticks:{callback:v=>nfc.format(v)}},
+        x:{grid:{display:false}},
+      },
+      layout:{padding:{top:18}},
+    }
+  });
+}
+
+function renderFmt(){
+  const lista=postsDoMes(state.ano,state.mes);
+  const nomeMetrica=(METRICAS.find(m=>m.id===state.mFmt)||{}).nome;
+  const ordem=['Reels','Carrossel','Foto','Vídeo','Stories'];
+  const presentes=ordem.filter(f=>lista.some(p=>p.formato===f));
+  const labels=[], valores=[], cores=[];
+  presentes.forEach(f=>{
+    const sub=lista.filter(p=>p.formato===f);
+    const s=somaMetrica(sub,state.mFmt);
+    labels.push(f); valores.push(s.achou?s.soma:0); cores.push(cssv(FMT_COR[f]||'--rose'));
+  });
+
+  if(chFmt) chFmt.destroy();
+  if(!labels.length){
+    const cv=document.getElementById('chFmt'); const ctx=cv.getContext('2d');
+    ctx.clearRect(0,0,cv.width,cv.height); return;
+  }
+  chFmt=new Chart(document.getElementById('chFmt'),{
+    type:'bar',
+    data:{labels,datasets:[{label:nomeMetrica,data:valores,backgroundColor:cores,borderRadius:8,maxBarThickness:70}]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{label:c=>`${nomeMetrica}: ${nf.format(c.parsed.y)}`}},
+        datalabels:{anchor:'end',align:'top',color:'#6b5f70',font:{size:12,weight:'700'},formatter:v=>nf.format(v)},
+      },
+      scales:{y:{beginAtZero:true,grid:{color:cssv('--line')},ticks:{callback:v=>nfc.format(v)}},x:{grid:{display:false}}},
+      layout:{padding:{top:16}},
+    }
+  });
+}
+
+function renderTabela(){
+  const lista=postsDoMes(state.ano,state.mes).slice().sort((a,b)=>engPost(b)-engPost(a)).slice(0,10);
+  const box=document.getElementById('tabela');
+  if(!lista.length){ box.innerHTML='<div class="empty">Nenhuma publicação neste mês.</div>'; return; }
+  const linhas=lista.map(p=>{
+    const cor=cssv(FMT_COR[p.formato]||'--rose');
+    const leg=(p.legenda||'').trim() || '(sem legenda)';
+    const link=p.permalink?` · <a href="${p.permalink}" target="_blank" rel="noopener">ver</a>`:'';
+    const dia=p.data?p.data.slice(8,10)+'/'+p.data.slice(5,7):'';
+    return `<tr>
+      <td style="white-space:nowrap"><span class="badge" style="background:${cor}">${p.formato}</span></td>
+      <td style="white-space:nowrap;color:var(--muted)">${dia}</td>
+      <td class="leg">${leg}${link}</td>
+      <td class="num">${nf.format(num(p.curtidas))}</td>
+      <td class="num">${nf.format(num(p.comentarios))}</td>
+    </tr>`;
+  }).join('');
+  box.innerHTML=`<table><thead><tr>
+    <th>Formato</th><th>Data</th><th>Legenda</th><th class="num">Curtidas</th><th class="num">Coment.</th>
+    </tr></thead><tbody>${linhas}</tbody></table>`;
+}
+
+carregar();
+</script>
+</body>
+</html>
