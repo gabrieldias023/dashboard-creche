@@ -1,0 +1,41 @@
+name: Coletar posts (rodar uma vez)
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot-ig
+  cancel-in-progress: false
+
+jobs:
+  posts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Coletar posts por formato
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+        run: node posts.js
+
+      - name: Commitar JSON se mudou
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain posts_ig.json)" ]; then
+            git add posts_ig.json
+            git commit -m "chore: coleta de posts por formato"
+            git push
+            echo "Posts commitados."
+          else
+            echo "Sem mudancas; nada a commitar."
+          fi
